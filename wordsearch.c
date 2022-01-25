@@ -179,16 +179,15 @@ int main(){
     clock_t end = clock();
 
     for (k = 0; k < row; k++) {
-		for (j = 0; j < maxcol; j++){
-			if (match[j][k] == 1){
-				printf("%c ", puzzle[j][k]);
-			}
-			else {
-				printf("- ");
-			}
-		}
-		printf("\n");
-	}
+        for (j = 0; j < maxcol; j++){
+            if (match[j][k] == 1){
+                printf("%c ", puzzle[j][k]);
+            }else {
+                printf("- ");
+            }
+        }
+        printf("\n");
+    }
 
     time_spend = (double)(end-begin)/CLOCKS_PER_SEC;
     printf("waktu yang dibutuhkan untuk pencarian kata adalah: %f detik", time_spend );
