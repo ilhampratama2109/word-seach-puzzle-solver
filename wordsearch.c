@@ -152,7 +152,6 @@ int main(){
                                 }
                             }
 						}
-
 					}
 					if (row > (WordLen(words[i]) + k)) {
 						for(l=0; words[i][l] == puzzle[j][k+l]; l++) {
@@ -171,7 +170,6 @@ int main(){
 								break;
 							}
 						}
-
                     }
                 }
             }
@@ -188,7 +186,6 @@ int main(){
 			else {
 				printf("- ");
 			}
-
 		}
 		printf("\n");
 	}
