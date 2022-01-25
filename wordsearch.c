@@ -115,8 +115,8 @@ int main(){
                                     break;
                                 }
                             }
-						}
-						if (0 <= (k - WordLen(words[i]))) {
+                        }
+                        if (0 <= (k - WordLen(words[i]))) {
                             for(l=0; words[i][l] == puzzle[j+l][k-l]; l++){
                                 if(words[i][l+1]=='\0') {
                                     for(l=0; words[i][l] == puzzle[j+l][k-l]; l++)
@@ -124,17 +124,17 @@ int main(){
                                     break;
                                 }
                             }
-						}
-					}
-					if (0 <= (j - WordLen(words[i]))){
-						for(l=0; words[i][l] == puzzle[j-l][k]; l++) {
-							if(words[i][l+1]=='\0') {
-								for(l=0; words[i][l] == puzzle[j-l][k]; l++)
-									match[j-l][k] = 1;
-								break;
-							}
-						}
-						if (row > (WordLen(words[i]) + k)) {
+                        }
+                    }
+                    if (0 <= (j - WordLen(words[i]))){
+                        for(l=0; words[i][l] == puzzle[j-l][k]; l++) {
+                            if(words[i][l+1]=='\0') {
+                                for(l=0; words[i][l] == puzzle[j-l][k]; l++)
+                                    match[j-l][k] = 1;
+                                break;
+                            }
+                        }
+                        if (row > (WordLen(words[i]) + k)) {
                             for(l=0; words[i][l] == puzzle[j-l][k+l]; l++) {
                                 if(words[i][l+1]=='\0') {
                                     for(l=0; words[i][l] == puzzle[j-l][k+l]; l++)
@@ -142,8 +142,8 @@ int main(){
                                     break;
                                 }
                             }
-						}
-						if (0 <= (k - WordLen(words[i]))) {
+                        }
+                        if (0 <= (k - WordLen(words[i]))) {
                             for(l=0; words[i][l] == puzzle[j-l][k-l]; l++) {
                                 if(words[i][l+1]=='\0') {
                                     for(l=0; words[i][l] == puzzle[j-l][k-l]; l++)
@@ -151,25 +151,25 @@ int main(){
                                     break;
                                 }
                             }
-						}
-					}
-					if (row > (WordLen(words[i]) + k)) {
-						for(l=0; words[i][l] == puzzle[j][k+l]; l++) {
-							if(words[i][l+1]=='\0') {
-								for(l=0; words[i][l] == puzzle[j][k+l]; l++)
-									match[j][k+l] = 1;
-								break;
-							}
-						}
-					}
-					if (0 <= (k - WordLen(words[i]))){
-						for(l=0; words[i][l] == puzzle[j][k-l]; l++) {
-							if(words[i][l+1]=='\0') {
-								for(l=0; words[i][l] == puzzle[j][k-l]; l++)
-									match[j][k-l] = 1;
-								break;
-							}
-						}
+                        }
+                    }
+                    if (row > (WordLen(words[i]) + k)) {
+                        for(l=0; words[i][l] == puzzle[j][k+l]; l++) {
+                            if(words[i][l+1]=='\0') {
+                                for(l=0; words[i][l] == puzzle[j][k+l]; l++)
+                                    match[j][k+l] = 1;
+                                break;
+                            }
+                        }
+                    }
+                    if (0 <= (k - WordLen(words[i]))){
+                    for(l=0; words[i][l] == puzzle[j][k-l]; l++) {
+                            if(words[i][l+1]=='\0') {
+                                for(l=0; words[i][l] == puzzle[j][k-l]; l++)
+                                    match[j][k-l] = 1;
+                                break;
+                            }
+                        }
                     }
                 }
             }
