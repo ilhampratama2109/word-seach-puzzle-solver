@@ -58,12 +58,13 @@ int main(){
     FILE *puzzlefile;
     FILE *keysearch;
     double time_spend = 0.0;
+    int jumlah_banding_kata = 0;
     
     // perhitungan waktu dimulai
     clock_t begin = clock();
     /*inisialisasi matcher*/
     InitMatched(match);
-    puzzlefile = fopen("puzzle1.txt", "r");
+    puzzlefile = fopen("puzzle9.txt", "r");
     if (puzzlefile == NULL){
         printf("gagal membuka file, periksa dulu apakah file yang anda masukkan benar \n");
         return 0;
@@ -81,7 +82,7 @@ int main(){
         }
     }
 
-    keysearch = fopen("key1.txt", "r");
+    keysearch = fopen("key9.txt", "r");
     if(keysearch == NULL){
         printf("tidak ada kata yang akan dicari\n");
         return 0;
@@ -103,8 +104,11 @@ int main(){
                             if(words[i][l+1] == '\0'){
                                 for(l = 0; words[i][l] == puzzle[j+l][k]; l++){
                                     match[j+l][k] = 1;
+                                    jumlah_banding_kata++;
                                 }
                                 break;
+                            }else{
+                                jumlah_banding_kata++;
                             }
                         }
                         if (row > (WordLen(words[i]) + k)) {	
@@ -112,7 +116,10 @@ int main(){
                                 if(words[i][l+1]=='\0') {
                                     for(l=0; words[i][l] == puzzle[j+l][k+l]; l++)
                                         match[j+l][k+l] = 1;
+                                        jumlah_banding_kata++;
                                     break;
+                                }else{
+                                    jumlah_banding_kata++;
                                 }
                             }
                         }
@@ -121,7 +128,10 @@ int main(){
                                 if(words[i][l+1]=='\0') {
                                     for(l=0; words[i][l] == puzzle[j+l][k-l]; l++)
                                         match[j+l][k-l] = 1;
+                                        jumlah_banding_kata++;
                                     break;
+                                }else{
+                                    jumlah_banding_kata++;
                                 }
                             }
                         }
@@ -131,7 +141,10 @@ int main(){
                             if(words[i][l+1]=='\0') {
                                 for(l=0; words[i][l] == puzzle[j-l][k]; l++)
                                     match[j-l][k] = 1;
+                                    jumlah_banding_kata++;
                                 break;
+                            }else{
+                                jumlah_banding_kata++;
                             }
                         }
                         if (row > (WordLen(words[i]) + k)) {
@@ -139,7 +152,10 @@ int main(){
                                 if(words[i][l+1]=='\0') {
                                     for(l=0; words[i][l] == puzzle[j-l][k+l]; l++)
                                         match[j-l][k+l] = 1;
+                                        jumlah_banding_kata++;
                                     break;
+                                }else{
+                                    jumlah_banding_kata++;
                                 }
                             }
                         }
@@ -148,7 +164,10 @@ int main(){
                                 if(words[i][l+1]=='\0') {
                                     for(l=0; words[i][l] == puzzle[j-l][k-l]; l++)
                                         match[j-l][k-l] = 1;
+                                        jumlah_banding_kata++;
                                     break;
+                                }else{
+                                    jumlah_banding_kata++;
                                 }
                             }
                         }
@@ -158,7 +177,10 @@ int main(){
                             if(words[i][l+1]=='\0') {
                                 for(l=0; words[i][l] == puzzle[j][k+l]; l++)
                                     match[j][k+l] = 1;
+                                    jumlah_banding_kata++;
                                 break;
+                            }else{
+                                jumlah_banding_kata++;
                             }
                         }
                     }
@@ -167,7 +189,10 @@ int main(){
                             if(words[i][l+1]=='\0') {
                                 for(l=0; words[i][l] == puzzle[j][k-l]; l++)
                                     match[j][k-l] = 1;
+                                    jumlah_banding_kata++;
                                 break;
+                            }else{
+                                jumlah_banding_kata++;
                             }
                         }
                     }
@@ -190,5 +215,7 @@ int main(){
     }
 
     time_spend = (double)(end-begin)/CLOCKS_PER_SEC;
-    printf("waktu yang dibutuhkan untuk pencarian kata adalah: %f detik", time_spend );
+    printf("waktu yang dibutuhkan untuk pencarian kata adalah:\n%f detik\n", time_spend );
+    printf("jumlah kata yang dibandingkan adalah : %d", jumlah_banding_kata);
+    return 0;
 }
