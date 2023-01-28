@@ -9,3 +9,4 @@ pastikan di komputer kalian sudah terinstal bahasa C, lalu buka folder bin dan j
  
 ## about me
 Ilham Pratama - 13520041
+:)
